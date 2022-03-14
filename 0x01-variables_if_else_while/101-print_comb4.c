@@ -2,35 +2,30 @@
 /**
  * main - Entry point
  *
- * Return: Always 0 (Success)
+ * Description: return all combination of 0 to 99
+ * Return: 0
  */
 int main(void)
 {
-int x, y, z;
+int n, m, d1, d2, d3, d4;
 
-for (x = 48; x <= 57; x++)
+for (n = 0; n <= 98; n++)
 {
-for (y = 48; y <= 57; y++)
+for (m = n + 1; m <= 99; m++)
 {
-for (z = 48; z <= 57; z++)
-{
-if (x == y || x == z || y == z || y <= x || z <= y)
-{
-}
-else
-{
-putchar(x);
-putchar(y);
-putchar(z);
-if (x == 55 && y == 56 && z == 57)
-{
-}
-else
-{
-putchar(44);
+d1 = n / 10;
+d2 = n % 10;
+putchar(d1 + '0');
+putchar(d2 + '0');
 putchar(' ');
-}
-}
+d3 = m / 10;
+d4 = m % 10;
+putchar(d3 + '0');
+putchar(d4 + '0');
+if (n != 98 || m != 99)
+{
+putchar(',');
+putchar(' ');
 }
 }
 }
