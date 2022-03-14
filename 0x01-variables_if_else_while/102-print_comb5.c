@@ -1,49 +1,38 @@
 #include <stdio.h>
-/* more headers goes there */
-/* betty style doc for function main goes there */
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
+* main - prints all possible different combinations of two digits.
+* Return: Always 0 (Success)
+*/
 int main(void)
 {
-int p = 48, q = 48, y = 48, x = 49;
-
-while (p < 58)
+int ones = '0';
+int tens = '0';
+int tens2 = '0';
+int ones2 = '0';
+for (tens = '0'; tens <= '9'; tens++)/* prints tens digit*/
 {
-while (q < 58)
+for (ones = '0'; ones <= '9'; ones++)/* prints ones digit*/
 {
-while (y < 58)
+for (tens2 = '0'; tens2 <= '9'; tens2++)/* prints tens digit*/
 {
-while (x < 58)
+for (ones2 = '0'; ones2 <= '9'; ones2++)/* prints ones digit*/
 {
-putchar(p);
-putchar(q);
+if ((ones < ones2) && (tens <= tens2))
+{
+putchar(tens);
+putchar(ones);
 putchar(' ');
-putchar(y);
-putchar(x);
-if (!(p == 57 &&
-q == 56 &&
-y == 57 &&
-x == 57))
+putchar(tens2);
+putchar(ones2);
+if (!(ones == '8' && tens == '9'))/*addes comma and space*/
 {
 putchar(',');
 putchar(' ');
 }
-x++;
 }
-y++;
-x = 48;
 }
-q++;
-q = p;
-x = q + 1;
 }
-p++;
-q = 48;
-y = p;
-x = q+ 1;
+}
 }
 putchar('\n');
 return (0);
