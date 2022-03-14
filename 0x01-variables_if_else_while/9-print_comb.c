@@ -1,23 +1,22 @@
 #include <stdio.h>
 /**
  * main - Entry point
+ *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-int i;
+int k;
 
-for (i = 0; i <= 9; i++)
+for (k = 48; k <= 57; k++)
 {
-
-putchar(i);
-if (i == 9)
+putchar(k);
+if (k < 57)
 {
 putchar(',');
 putchar(' ');
 }
 }
 putchar('\n');
-
 return (0);
 }
