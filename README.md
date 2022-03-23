@@ -1,1 +1,1 @@
-# alx-low_level_programming
+MY README FOR POINTERS AND ARRAYS
