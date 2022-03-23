@@ -1,62 +1,37 @@
-#include "main.h
+#include "main.h"
+#include <stdio.h>
 
 /**
- * separators - checks and ensure that all string is capitalized
- * @c: character to be checked
- * Return: if separator return 1. Otherwise return 0;
+ * cap_string - check the code for Holberton School students.
+ * @a: is a pointer type char
+ * Return: Always 0.
+ *
  */
+char *cap_string(char *a)
+{
+char separator[] = " \t\n,;.!?\"(){}";
+int i, j;
 
-
-int separator(char c)
+for (i = 0; a[i] != '\0'; i++)
 {
 
-switch (c)
+if (a[i] >= 'a' && a[i] <= 'z')
 {
-case ' ':
-case '\t':
-case '\n':
-case ',':
-case ';':
-case '.':
-case '!':
-case '?':
-case '"':
-case '(':
-case ')':
-case '{':
-case '}':
-return (1);
 
-default:
-return (0);
+if (i == 0)
+a[i] -= 32;
+
+
+else
+{
+for (j = 0; separator[j] != '\0'; j++)
+{
+if (a[i - 1] == separator[j])
+a[i] -= 32;
+}
 }
 
-
 }
-/**
- * cap_string - capitalizes all words of a string
- * @s: string to uppercase
- * Return: returns the modified string
- */
-char *cap_string(char *s)
-{
-int count, upper;
-
-upper = -32;
-
-count = 0;
-
-while (s[count] != '\0')
-{
-if (s[count] >= 'a' && s[count] <= 'z')
-{
-
-
-if (s[count] == *s || separator(s[count - 1]))
-
-s[count] += upper;
 }
-count++;
-}
-return (s);
+return (a);
 }
